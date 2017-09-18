@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{AD7FB70D-8C68-418D-9C41-5A372625792A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DigiviceAlpha</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>DigiviceAlpha</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.14.1\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="GameViewController.cs" />
+    <Compile Include="GameViewController.designer.cs">
+      <DependentUpon>GameViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameScene.cs" />
+    <Compile Include="DataModel\UserProfile.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="DataModel\DigimonStat.cs" />
+    <Compile Include="DataModel\DigimonProfile.cs" />
+    <Compile Include="ViewModel\Digimon.cs" />
+    <Compile Include="ViewModel\AttackWave.cs" />
+    <Compile Include="DataModel\AttackWaveInfo.cs" />
+    <Compile Include="SKSpriteNode\DigiComponent.cs" />
+    <Compile Include="Database\DB.cs" />
+    <Compile Include="Extension\EX.cs" />
+    <Compile Include="SKSpriteNode\Digivice.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Extension\" />
+    <Folder Include="DataModel\" />
+    <Folder Include="Database\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="SKSpriteNode\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Textures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GameScene.sks" />
+    <BundleResource Include="Resources\GameDataDBInit.txt" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\01.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\02.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\03.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\04.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\05.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\06.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\07.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\08.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\09.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\10.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\11.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\12.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\13.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\14.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\15.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\16.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\17.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\18.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\19.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\20.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\21.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\22.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\23.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\24.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\25.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\26.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\27.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\28.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\29.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\30.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\31.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\32.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\33.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\34.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\35.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\36.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\37.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\38.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\39.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\40.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\41.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\42.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\43.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\44.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\45.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\46.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\47.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\48.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\49.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\50.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\51.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\52.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\53.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\54.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\55.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\56.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\57.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\58.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\59.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\60.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\61.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\62.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\63.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\64.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\65.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\66.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\67.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\68.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\69.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\70.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\71.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\72.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\73.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\74.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\75.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\76.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\77.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\CriticalAttack\78.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\01.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\02.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\03.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\04.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\05.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\06.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\07.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\08.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\09.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\10.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\11.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\12.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\13.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\14.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\15.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\16.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\17.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\18.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\19.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\20.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\21.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\22.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\23.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\24.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\25.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\26.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\27.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\28.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\29.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\30.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\31.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\32.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\33.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\34.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\35.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\36.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\37.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\38.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\39.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\40.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\41.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\42.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\43.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\44.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\45.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\46.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\47.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\48.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\49.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\50.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\51.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\52.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\53.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\54.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\55.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\56.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\57.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\58.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\59.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\60.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\61.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\62.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\63.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\64.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\65.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\66.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\67.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\68.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\69.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\70.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\71.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\72.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\73.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\74.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\75.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\76.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\77.png" />
+    <BundleResource Include="Resources\Textures\AttackWave\01\NormalAttack\78.png" />
+    <BundleResource Include="Resources\Textures\Digimon\Agumon\Agumon.png" />
+    <BundleResource Include="Resources\Textures\Digimon\Agumon\Attacking\01.png" />
+    <BundleResource Include="Resources\Textures\Digimon\Agumon\Attacking\02.png" />
+    <BundleResource Include="Resources\Textures\Digimon\Agumon\Attacking\03.png" />
+    <BundleResource Include="Resources\Textures\Digimon\Agumon\StandingStill\01.png" />
+    <BundleResource Include="Resources\Textures\Digimon\Agumon\StandingStill\02.png" />
+    <BundleResource Include="Resources\Textures\HPBar\00.png" />
+    <BundleResource Include="Resources\Textures\HPBar\01.png" />
+    <BundleResource Include="Resources\Textures\HPBar\02.png" />
+    <BundleResource Include="Resources\Textures\HPBar\03.png" />
+    <BundleResource Include="Resources\Textures\HPBar\04.png" />
+    <BundleResource Include="Resources\Textures\HPBar\05.png" />
+    <BundleResource Include="Resources\Textures\HPBar\06.png" />
+    <BundleResource Include="Resources\Textures\HPBar\07.png" />
+    <BundleResource Include="Resources\Textures\HPBar\08.png" />
+    <BundleResource Include="Resources\Textures\HPBar\09.png" />
+    <BundleResource Include="Resources\Textures\HPBar\10.png" />
+    <BundleResource Include="Resources\Textures\HPBar\11.png" />
+    <BundleResource Include="Resources\Textures\HPBar\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Spaceship.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Spaceship.imageset\Spaceship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Antenna.png">
+      <DeployService-Deploy>True</DeployService-Deploy>
+      <DeployService-UseProjectRelativePath>True</DeployService-UseProjectRelativePath>
+      <DeployService-RelativeDeployPath>Textures/DigiComponent/Antenna.png</DeployService-RelativeDeployPath>
+    </AtlasTexture>
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Back.png">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </AtlasTexture>
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Button_A.png">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </AtlasTexture>
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Button_B.png">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </AtlasTexture>
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Button_C.png">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </AtlasTexture>
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Frame.png" />
+    <AtlasTexture Include="Resources\Textures\DigiComponent.atlas\Screen.png" />
+  </ItemGroup>
+</Project>

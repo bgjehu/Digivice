@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="DigiviceAlpha/DigiviceAlpha.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6Plus.8.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DigiviceAlpha/Digivice/DigiviceController.cs">
+    <Files>
+      <File FileName="DigiviceAlpha/Digivice/DigiviceController.cs" Line="31" Column="1" />
+      <File FileName="DigiviceAlpha/Digivice/DigiviceScreen/DigiviceScreenController.cs" Line="21" Column="68" />
+      <File FileName="DigiviceAlpha/Digimons/Digimon_Agumon.cs" Line="37" Column="28" />
+      <File FileName="DigiviceAlpha/Digimons/Digipic.cs" Line="11" Column="54" />
+      <File FileName="DigiviceAlpha/Main.cs" Line="12" Column="1" />
+      <File FileName="DigiviceAlpha/Digivice/DigiviceScreen/UnitBlock.cs" Line="38" Column="28" />
+      <File FileName="DigiviceAlpha/ViewController.cs" Line="18" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

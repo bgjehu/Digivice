@@ -1,0 +1,7 @@
+Nyaromon		猫猫兽			幼年期II
+Yukimobotamon		雪球獸			幼年期Ⅰ
+Agumon			亚古兽			成长期			疫苗
+Gabumon			加布兽			成长期			数据		
+Plotmon			小狗兽			成长期			疫苗
+Greymon			暴龙兽			成熟期			疫苗
+Leomon			狮子兽			成熟期			疫苗

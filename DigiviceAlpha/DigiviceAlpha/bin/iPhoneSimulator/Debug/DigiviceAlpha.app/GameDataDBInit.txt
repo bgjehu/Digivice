@@ -1,0 +1,17 @@
+﻿BEGIN TRANSACTION;
+CREATE TABLE "DigiComponentProfile" (
+	`Name`	varchar NOT NULL,
+	`DefaultColorJson`	varchar,
+	`PositionJson`	varchar,
+	`ZPosition`	INTEGER,
+	PRIMARY KEY(Name)
+);
+INSERT INTO `DigiComponentProfile` (Name,DefaultColorJson,PositionJson,ZPosition) VALUES ('Antenna','[0.0,0.0,1.0,1.0]','[-188.0,179.0]',1),
+ ('Back','[1.0,0.5,0.0,1.0]','[0.0,0.0]',0),
+ ('Button_A','[0.0,0.0,1.0,1.0]','[-188.5,7.5]',1),
+ ('Button_B','[0.0,0.0,1.0,1.0]','[179.0,67.5]',1),
+ ('Button_C','[0.0,0.0,1.0,1.0]','[179.5,-43.5]',1),
+ ('Frame','[0.0,0.0,0.0,1.0]','[0.0,0.0]',1),
+ ('Screen','[0.458823532,0.4627451,0.392156869,1.0]','[-4.0,12.0]',1);
+COMMIT;
+

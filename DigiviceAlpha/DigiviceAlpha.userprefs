@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="DigiviceAlpha/DigiviceAlpha.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DigiviceAlpha/SKSpriteNode/DigiComponent.cs">
+    <Files>
+      <File FileName="DigiviceAlpha/ViewModel/Digimon.cs" Line="1" Column="1" />
+      <File FileName="DigiviceAlpha/ViewModel/AttackWave.cs" Line="1" Column="1" />
+      <File FileName="DigiviceAlpha/SKSpriteNode/DigiComponent.cs" Line="13" Column="3" />
+      <File FileName="DigiviceAlpha/GameScene.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

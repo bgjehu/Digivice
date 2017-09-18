@@ -1,0 +1,7 @@
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/bin/Debug/DigiviceAlpha.UITests.dll.mdb
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/bin/Debug/DigiviceAlpha.UITests.dll
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/obj/Debug/DigiviceAlpha.UITests.dll
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/obj/Debug/DigiviceAlpha.UITests.dll.mdb
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/bin/Debug/nunit.framework.dll
+/Users/Jieyi/Dropbox/Dev/Stuffs/Digivice_Development/DigiviceAlpha/DigiviceAlpha.UITests/bin/Debug/Xamarin.UITest.dll
